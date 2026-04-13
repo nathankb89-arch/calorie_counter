@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/calorie.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen py-8 px-4">
+        <div class="max-w-2xl mx-auto">
+            <!-- Header -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Calorie Counter</h1>
+                <p class="text-gray-600">Track your daily calorie intake</p>
+            </div>
+
+            <!-- Add Food Form -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Add Food Item</h2>
+                <form id="foodForm" class="flex flex-col gap-4">
+                    <input 
+                        type="text" 
+                        id="foodName" 
+                        placeholder="Food name" 
+                        class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
+                    >
+                    <input 
+                        type="number" 
+                        id="foodCalories" 
+                        placeholder="Calories" 
+                        min="0" 
+                        class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
+                    >
+                    <button 
+                        type="submit" 
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition"
+                    >
+                        Add Food
+                    </button>
+                </form>
+            </div>
+
+            <!-- Total Calories Section -->
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-md p-6 mb-6 text-white">
+                <p class="text-lg mb-2">Total Calories Today</p>
+                <h3 id="totalCalories" class="text-5xl font-bold">0</h3>
+            </div>
+
+            <!-- Food Items List -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Food Items</h2>
+                <ul id="foodList" class="space-y-3">
+                    <li class="text-gray-500 text-center py-4">No items added yet</li>
+                </ul>
+            </div>
+
+            <!-- Reset Button -->
+            <button 
+                id="resetBtn" 
+                class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition"
+            >
+                Reset All
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
